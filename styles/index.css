@@ -1,0 +1,129 @@
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  min-width: 1200px;
+  height: 160px;
+  background-color: antiquewhite;
+}
+
+.header-tel {
+  background-color: cyan;
+  width: 180px;
+  height: 60px;
+  float: right;
+}
+
+
+section{
+  width: 100%;
+  min-width: 1200px;
+}
+
+.top-slider {
+  width: 100%;
+  height: 650px;
+}
+
+.main1 {
+  width: 100%;
+  height: 650px;
+}
+
+
+.dots {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.dot {
+  list-style: none;
+}
+
+.product-info {
+  width: 100%;
+  height: 350px;
+  background-color: burlywood;
+  position: relative;
+}
+
+.product-info__title {
+  text-align: center;
+}
+
+.product-info__link {
+  display: inline-block;
+  height: 50px;
+  width: 200px;
+  line-height: 50px;
+  background-color: cornsilk;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+  text-decoration: none;
+  color: black;
+}
+
+.handmade-wrapper{
+  height: 450px;
+  margin-top: 60px;
+}
+
+.handmade-info {
+  position: relative;
+}
+
+.handmade-info__content {
+  width: 80%;
+  height: 400px;
+  background-color: burlywood;
+  position: absolute;
+  top: 0px;
+  right: 100px;
+}
+
+.handmade-info__image {
+  width: 600px;
+  height: 400px;
+  background-color: cornflowerblue;
+  position: absolute; 
+  top: 70px;
+  right: 0px; 
+}
+
+.oem-wrapper {
+  height: 450px;
+  margin-top: 60px;
+}
+
+.oem-info {
+  position: relative;
+}
+
+.oem-info__content {
+  width: 80%;
+  height: 400px;
+  background-color: burlywood;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  right: 60px;
+}
+
+.oem-info__image {
+  width: 600px;
+  height: 400px;
+  background-color: cornflowerblue;
+  position: absolute;
+  z-index: 10;
+  top: 70px;
+}
+
