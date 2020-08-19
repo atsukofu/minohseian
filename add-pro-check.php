@@ -86,15 +86,15 @@
     } else {
       print '上記の商品を登録します。';
       print '<form method="post" action="add-pro-done.php">';
-      print '<input name="name" value="'.$pro_name.'">';
-      print '<input name="content" value="'.$pro_content.'">';
-      print '<input name="brix" value="'.$pro_brix.'">';
-      print '<input name="weight" value="'.$pro_weight.'">';
-      print '<input name="preserve" value="'.$pro_preserve.'">';
-      print '<input name="expir" value="'.$pro_expir.'">';
-      print '<input name="image_name" value="'.$pro_image['name'].'">';
-      print '<input type="button" onclick="history.back()" value="戻る">';
-      print '<input type="submit" value="OK">';
+      print '<input type="hidden" name="name" value="'.$pro_name.'">';
+      print '<input type="hidden" name="content" value="'.$pro_content.'">';
+      print '<input type="hidden" name="brix" value="'.$pro_brix.'">';
+      print '<input type="hidden" name="weight" value="'.$pro_weight.'">';
+      print '<input type="hidden" name="preserve" value="'.$pro_preserve.'">';
+      print '<input type="hidden" name="expir" value="'.$pro_expir.'">';
+      print '<input type="hidden" name="image_name" value="'.$pro_image['name'].'">';
+      print '<input type="hidden" type="button" onclick="history.back()" value="戻る">';
+      print '<input type="hidden" type="submit" value="OK">';
       print '</form>';
     }
 
