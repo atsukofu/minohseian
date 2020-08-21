@@ -7,14 +7,14 @@
 </head>
 <body>
   <?php
-    try {
+    // try {
       $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
       $user = 'root';
       $password = '';
       $dbh = new PDO($dsn, $user, $password);
       $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-      $sql = 'SELECT name FROM ankoproduct WHERE 1';
+      $sql = 'SELECT id,name,image FROM ankoproduct WHERE 1';
       $stmt = $dbh->prepare($sql);
       $stmt->execute();
 
@@ -30,16 +30,17 @@
         }
         print '<div class="product">';
         print '<div>';
-        print '<a href="">';
+        print '<a href="pro-show.php?proid='.$rec['id'].'">';
         print $rec['name'];
+        print '<img src="../gazou/'.$rec['image'].'">';
         print '</a>';
         print '<br/>';
       }
 
-    } catch(Exception $e) {
-      print 'ただいま障害により大変ご迷惑をおかけしております。';
-      exit();
-    }
+    // } catch(Exception $e) {
+    //   print 'ただいま障害により大変ご迷惑をおかけしております。';
+    //   exit();
+    // }
   ?>
 </body>
 </html>
