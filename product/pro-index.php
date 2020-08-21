@@ -8,6 +8,7 @@
 <body>
   <?php
     try {
+
       $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
       $user = 'root';
       $password = '';
@@ -41,6 +42,7 @@
       print 'ただいま障害により大変ご迷惑をおかけしております。';
       exit();
     }
+
   ?>
 </body>
 </html>
