@@ -6,7 +6,11 @@
   <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-<h3>カレンダー年月選択</h3>
+  親子や友達同士でご参加ください！<br/>
+  お一人参加でも大歓迎です！<br/>
+  料金：お一人様1500円<br/>
+  持ち物：エプロン<br/>
+<h3>年月を選択してください</h3>
 <?php
 if(isset($_POST['yyyy']) && $_POST['yyyy'] != '' && isset($_POST['mm']) != ''){
   $yyyy = $_POST['yyyy'];
@@ -41,8 +45,8 @@ $dd = 1;
 
   <input type="submit" value="送信">
 </form>
-
-<h3>カレンダー</h3>
+<br/>
+<br/>
 <!-- 関数定義 -->
 <?php
   function calendar($yyyy, $mm, $dd){
@@ -113,7 +117,7 @@ $dd = 1;
       ?>
      ">
       <?php 
-        print '<a href="reserve-form.php?year='.$yyyy.'month='.$mm.'date='.$dd.'">';
+        print '<a href="reserve-form.php?year='.$yyyy.'&month='.$mm.'&day='.$dd.'">';
         print $dd;
         print '</a>';
        ?></td></tr>
