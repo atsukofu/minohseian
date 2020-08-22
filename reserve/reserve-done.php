@@ -8,16 +8,12 @@
 <body>
 <?php
 try{
-  $year = $_POST['year'];
-  $month = $_POST['month'];
-  $day = $_POST['day'];
+  $reserve_date = $_POST['reserve_date'];
   $people = $_POST['people'];
   $name = $_POST['name'];
   $tel = $_POST['tel'];
 
-  $year = htmlspecialchars($year,ENT_QUOTES,'UTF-8');
-  $month = htmlspecialchars($month,ENT_QUOTES,'UTF-8');
-  $day = htmlspecialchars($day,ENT_QUOTES,'UTF-8');
+  $reserve_date = htmlspecialchars($reserve_date,ENT_QUOTES,'UTF-8');
   $people = htmlspecialchars($people,ENT_QUOTES,'UTF-8');
   $name = htmlspecialchars($name,ENT_QUOTES,'UTF-8');
   $tel = htmlspecialchars($tel,ENT_QUOTES,'UTF-8');
@@ -29,11 +25,9 @@ try{
   $dbh = new PDO($dsn, $user, $password);
   $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-  $sql = 'INSERT INTO reservations(year,month,day,people,name,tel) VALUES (?,?,?,?,?,?)';
+  $sql = 'INSERT INTO reservations(reserve_date,people,name,tel) VALUES (?,?,?,?)';
   $stmt = $dbh->prepare($sql);
-  $data[] = $year;
-  $data[] = $month;
-  $data[] = $day;
+  $data[] = $reserve_date;
   $data[] = $people;
   $data[] = $name;
   $data[] = $tel;

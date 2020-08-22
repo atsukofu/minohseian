@@ -25,12 +25,12 @@
   print "ご予約日時: $year 年 $month 月 $day 日 14:00~開始 (終了予定は16時です)<br />";
   print "人数: $people 名様<br />";
   print "お名前: $name 様<br/>";
-  print "お電話番号: $tel";
+  print "お電話番号: $tel<br />";
+
+  $reserve_date = $year.'-'.$month.'-'.$day;
 
   print '<form method="POST" action="reserve-done.php">';
-  print '<input type="hidden" name="year" value="'.$year.'">';
-  print '<input type="hidden" name="month" value="'.$month.'">';
-  print '<input type="hidden" name="day" value="'.$day.'">';
+  print '<input type="hidden" name="reserve_date" value="'.$reserve_date.'">';
   print '<input type="hidden" name="people" value="'.$people.'">';
   print '<input type="hidden" name="name" value="'.$name.'">';
   print '<input type="hidden" name="tel" value="'.$tel.'">';
