@@ -230,7 +230,7 @@ iframe {
  * Reset form fields to make them styleable
  */
 
-button,
+/* button,
 input,
 optgroup,
 select,
@@ -247,7 +247,7 @@ textarea {
   outline: 0;
   border-radius: 0;
   text-align: inherit;
-}
+ } */
 
 /**
  * Reset radio and checkbox appearance to preserve their look in iOS.
