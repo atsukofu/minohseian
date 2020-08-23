@@ -1,28 +1,104 @@
+@import url("reset.css");
+
+html{
+  width: 100%;
+}
 
 body {
+  width: 100%;
   box-sizing: border-box;
   padding: 0;
 }
 
 header {
   width: 100%;
-  min-width: 1200px;
   height: 160px;
-  background-color: antiquewhite;
+  padding: 0 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+  width: 400px;
+  height: 100%;
+}
+
+.header-text {
+  margin-top: 10px;
+}
+
+.header-logo {
+  width: 250px;
+  height: 60px;
+  background-color: cornsilk;
+  margin: 40px 0 0 10px;
+}
+
+.header-right {
+  width: 400px;
+  height: 100%;
+  position: relative;
 }
 
 .header-tel {
-  background-color: cyan;
+  margin-top: 10px;
   width: 180px;
   height: 60px;
   float: right;
+  color: #96514d;
 }
 
+.fa-phone-volume {
+  font-size: 20px;
+}
+
+.telnumber {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.business-time {
+  margin-top: 10px;
+}
+
+.header-menu {
+  background-color: #fff;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  font-size: 18px;
+}
+
+.menu-list {
+  display: flex;
+}
+
+.menu-list>li {
+  width: 120px;
+  border-left: #96514d solid 1px;
+  border-right: #96514d solid 1px;
+  text-align: center;
+}
+
+.menu-list>li>a {
+  text-decoration: none;
+  color: #96514d;
+}
+
+.fa-facebook-square {
+  color: #3B5998;
+  font-size: 22px;
+}
+
+.fa-twitter-square {
+  color: #1DA1F2;
+  font-size: 22px;
+}
 
 section{
-  width: 100%;
+  max-width: 100%;
   min-width: 1200px;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
 }
 
 .top-slider {
@@ -40,6 +116,7 @@ section{
   display: flex;
   justify-content: center;
   padding: 0;
+  height: 40px;
 }
 
 .dot {
@@ -49,7 +126,7 @@ section{
 .product-info {
   width: 100%;
   height: 350px;
-  background-color: burlywood;
+  background-color: #e6b9b8;
   position: relative;
 }
 
@@ -59,18 +136,21 @@ section{
 
 .product-info__link {
   display: inline-block;
-  height: 50px;
-  width: 200px;
-  line-height: 50px;
-  background-color: cornsilk;
+  height: 60px;
+  width: 250px;
+  line-height: 60px;
+  background-color: #fff;
+  font-size: 20px;
+  color: #96514d;
+  border: #96514d solid 1px;
+  border-radius: 2px;
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   left: 0;
   right: 0;
   text-align: center;
   margin: auto;
   text-decoration: none;
-  color: black;
 }
 
 .handmade-wrapper{
@@ -85,19 +165,47 @@ section{
 .handmade-info__content {
   width: 80%;
   height: 400px;
-  background-color: burlywood;
+  background-color: #e6b9b8;
   position: absolute;
   top: 0px;
   right: 100px;
 }
 
-.handmade-info__image {
+.handmade-title {
+  font-size: 50px;
+  color: #96514d;
+  margin: 30px 0 30px 40px;
+}
+
+.handmade-introduction {
+  margin-left: 40px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.handmade-link {
+  display: inline-block;
+  margin: 30px 0 0 40px;
+  font-size: 20px;
+  background-color: #fff;
+  padding: 10px;
+  color: #96514d;
+  border: #96514d solid 1px;
+  border-radius: 2px;
+}
+
+.handmade-info__flame {
   width: 600px;
   height: 400px;
   background-color: cornflowerblue;
   position: absolute; 
   top: 70px;
   right: 0px; 
+}
+
+.handmade-info__flame--image {
+  width: 600px;
+  height: 400px;
 }
 
 .oem-wrapper {
@@ -112,14 +220,39 @@ section{
 .oem-info__content {
   width: 80%;
   height: 400px;
-  background-color: burlywood;
+  background-color: #e6b9b8;
   position: absolute;
   z-index: 1;
   top: 0px;
   right: 60px;
+  padding-left: 470px;
 }
 
-.oem-info__image {
+.oem-title {
+  font-size: 50px;
+  color: #96514d;
+  margin: 30px 10px 30px;
+}
+
+.oem-introduction {
+  margin-left: 20px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.oem-link {
+  display: inline-block;
+  margin: 30px 0 0 90px;
+  font-size: 20px;
+  background-color: #fff;
+  padding: 10px 20px;
+  color: #96514d;
+  border: #96514d solid 1px;
+  border-radius: 2px;
+}
+
+
+.oem-info__flame {
   width: 600px;
   height: 400px;
   background-color: cornflowerblue;
@@ -128,19 +261,67 @@ section{
   top: 70px;
 }
 
+.oem-info__flame--image {
+  width: 600px;
+  height: 400px;
+}
+
  .footer {
-  width: 1400px;
+  width: 100%;
   height: 300px;
-  background-color: aquamarine;
+  background-color: #e9c7c5;
 }
 
 .footer-top {
   width: 100%;
   height: 250px;
+  padding-top: 20px;
+}
+
+.footer-list {
+  margin: 0 auto;
+  width: 480px;
+  height: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  border-bottom: #96514d solid 1px;
+}
+
+.footer-list>li {
+  width: 33.3%;
+  height: 50%;
+  text-align: center;
+  color: #96514d;
+  font-size: 18px;
+  line-height: 45px;
+}
+
+.footer-company-wrapper {
+  margin: 20px auto 0;
+  width: 480px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  width: 200px;
+  height: 100px;
+  background-color: darksalmon;
+}
+
+.footer-address {
+  width: 200px;
+  height: 100px;
+  /* background-color: darkseagreen; */
+  color: #96514d;
 }
 
 .footer-bottom {
   width: 100%;
   height: 50px;
-  background-color: burlywood;
+  background-color: #96514d;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
 }
