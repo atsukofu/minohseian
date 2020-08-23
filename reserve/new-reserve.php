@@ -11,7 +11,7 @@
 <header>
     <div class="header-left">
       <p class="header-text">大阪北部の箕面市で100年愛されるあんこやさんです。</p>
-      <h2 class="header-logo">箕面製餡所</h2>
+      <img src="../images/logo.png" class="header-logo">
     </div>
     <div class="header-right">
       <div class="header-tel">
@@ -218,7 +218,7 @@ $dd = 1;
         <li><a href="#">STAFF</a></li>
       </ul>
       <div class="footer-company-wrapper">
-        <div class="footer-logo">箕面製餡所</div>
+        <img src="../images/footer_logo.png" class="footer-logo">
         <div class="footer-address">〒590-0021<br/>大阪府箕面市みのお台<br/>1丁目23番</div>
       </div>
       </div>
