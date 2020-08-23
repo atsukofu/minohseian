@@ -3,19 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <title>おいしいあんこ屋さん 箕面製餡所</title>
-  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/contact.css">
+  <link rel="stylesheet" href="../styles/reserve.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <div class="header-left">
+      <p class="header-text">大阪北部の箕面市で100年愛されるあんこやさんです。</p>
+      <img src="../images/logo.png" class="header-logo">
+    </div>
+    <div class="header-right">
+      <div class="header-tel">
+        <i class="fas fa-phone-volume"></i>
+        <span class="telnumber">072-014-085</span>
+        <p class="business-time">月〜金 9:00~18:00</p>
+      </div>
+      <div class="header-menu">
+        <ul class="menu-list">
+          <li><a href="#">会社概要</a></li>
+          <li><a href="product/pro-index.php">商品紹介</a></li>
+          <li><a href="reserve/new-reserve.php">和菓子教室</a></li>
+          <li><a href="contact/contact-new.html">お問い合わせ</a></li>
+          <li>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-twitter-square"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <h1 class="reserve-title">お問い合わせはこちらから、お気軽にどうぞ！</h1>
+  <div class="reserve-content-wrapper">
+    <div class="reserve-content">
+      シーズンごとの商品考案に<br/>
+      苦労されていませんか？<br/>
+      箕面製餡所では、年間100種のオリジナル商品を<br/>
+      ご提案させていただいております。<br/><br/>
+      1ロット500kgから製造いたしますので、<br/>
+      お気軽にご相談ください！<br/><br/>
+      手作りお菓子教室に関するお問い合わせも、<br/>
+      こちらのフォームよりお気軽にお問い合わせください。<br/>
+    </div>
+    <img src="../images/main1.png" width="400px" height="300px">
+  </div>
+  <div class="customer-form-wrapper">
   <form method="post" action="contact-confirm.php">
     <p>会社名(法人の場合)</p>
-    <input type="text" name="company" size="50" value=""/><br>
+    <input type="text" name="company" size="50" value=""/><br/><br/>
     <p>お名前</p>
-    <input type="text" name="name" size="50" value=""/><br/>
+    <input type="text" name="name" size="50" value=""/><br/><br/>
     <p>メールアドレス</p>
-    <input type="text" name="email" size="50" value=""/><br/>
+    <input type="text" name="email" size="50" value=""/><br/><br/>
     <p>お問い合わせ内容</p>
-    <textarea name="content" cols="50" rows="5"></textarea><br/>
-    <input type="submit" value="送信">
+    <textarea name="content" cols="50" rows="5"></textarea><br/><br/>
+    <input type="submit" value="送信" class="calendar-submit">
   </form>
+</div>
+<div class="footer">
+  <div class="footer-top">
+    <ul class="footer-list">
+      <li><a href="/minohseian/index.html">HOME</a></li>
+      <li><a href="#">会社概要</a></li>
+      <li><a href="/minohseian/product/pro-index.php">商品紹介</a></li>
+      <li><a href="/minohseian/reserve/new-reserve.php">和菓子教室</a></li>
+      <li><a href="/minohseian/contact/contact-new.html">お問い合わせ</a></li>
+      <li><a href="#">STAFF</a></li>
+    </ul>
+    <div class="footer-company-wrapper">
+      <img src="../images/footer_logo.png" class="footer-logo">
+      <div class="footer-address">〒590-0021<br/>大阪府箕面市みのお台<br/>1丁目23番</div>
+    </div>
+    </div>
+  <div class="footer-bottom">
+    Copyright (c) 箕面製饀所 Co., Ltd All rights reserved.
+  </div>
+</div>
 </body>
 </html>

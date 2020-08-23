@@ -28,10 +28,10 @@ header {
 }
 
 .header-logo {
-  width: 250px;
-  height: 60px;
+  width: 300px;
+  height: 120px;
   background-color: cornsilk;
-  margin: 40px 0 0 10px;
+  margin-top:12px;
 }
 
 .header-right {
@@ -298,7 +298,7 @@ section{
 }
 
 .footer-company-wrapper {
-  margin: 20px auto 0;
+  margin: 0 auto;
   width: 480px;
   display: flex;
   justify-content: space-between;
@@ -307,13 +307,12 @@ section{
 .footer-logo {
   width: 200px;
   height: 100px;
-  background-color: darksalmon;
 }
 
 .footer-address {
+  margin-top: 20px;
   width: 200px;
   height: 100px;
-  /* background-color: darkseagreen; */
   color: #96514d;
 }
 
