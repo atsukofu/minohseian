@@ -33,7 +33,7 @@
       </div>
     </div>
   </header>
-  <h1 class="reserve-title">手作り和菓子教室のご案内</h1>
+  <h1 class="title">手作り和菓子教室のご案内</h1>
   <div class="reserve-content-wrapper">
     <div class="reserve-content">
       箕面製餡では、毎週土曜日に手作りお菓子教室を<br/>

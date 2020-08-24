@@ -33,7 +33,7 @@
       </div>
     </div>
   </header>
-  <h1 class="reserve-title">お客様上情報入力ページ</h1>
+  <h1 class="title">お客様上情報入力ページ</h1>
   <div class="customer-form-wrapper">
     <?php
       $year = $_GET['year'];

@@ -33,7 +33,7 @@
     </div>
   </div>
   </header>
-  <h1 class="reserve-title">予約内容の確認</h1>
+  <h1 class="title">予約内容の確認</h1>
   <div class="customer-form-wrapper">
     <?php
       $year = $_POST['year'];

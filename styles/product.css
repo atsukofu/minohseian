@@ -1,0 +1,48 @@
+.promotion {
+  width: 840px;
+  background-color: #e6b9b8;
+  margin: 50px auto;
+  color: #96514d;
+  display: block;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.products-wrapper {
+  width: 840px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 60px auto;
+}
+
+.products-index-image {
+  width: 200px;
+  height: 200px;
+}
+
+.products-name-area {
+  width: 200px;
+  height: 100px;
+  /* background-color: blanchedalmond; */
+  margin-right: 10px;
+  padding: 10px;
+  color: #96514d;
+}
+
+.products-name {
+  text-align: center;
+  margin:10px 0;
+  font-weight: bold;
+}
+
+.fa-chevron-circle-right {
+  margin: 0 5px 0 10px;
+}
+
+.products-show-link {
+  text-align: center;
+  display: inline-block;
+  padding: 5px;
+  border: #96514d solid 1px;
+  border-radius: 3px;
+}

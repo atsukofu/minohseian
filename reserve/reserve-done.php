@@ -33,7 +33,7 @@
     </div>
   </div>
   </header>
-  <h1 class="reserve-title">ご予約ありがとうございます。</h1>
+  <h1 class="title">ご予約ありがとうございます。</h1>
   <div class="customer-form-wrapper">
     <?php
     try{
