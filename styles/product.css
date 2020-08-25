@@ -1,11 +1,20 @@
 .promotion {
   width: 840px;
-  background-color: #e6b9b8;
   margin: 50px auto;
   color: #96514d;
   display: block;
-  padding: 20px;
   font-size: 18px;
+  display: flex;
+}
+
+.promotion__content {
+  padding: 20px;
+  background-color: #e6b9b8;
+  width: 540px;
+}
+
+.promotion__image{
+  width: 300px;
 }
 
 .products-wrapper {
@@ -23,7 +32,6 @@
 .products-name-area {
   width: 200px;
   height: 100px;
-  /* background-color: blanchedalmond; */
   margin-right: 10px;
   padding: 10px;
   color: #96514d;
@@ -46,3 +54,51 @@
   border: #96514d solid 1px;
   border-radius: 3px;
 }
+
+.product-wrapper {
+  margin: 50px auto 70px;
+  width: 700px;
+  display: flex;
+  position: relative;
+}
+
+.product-detail {
+  margin-left: 20px;
+}
+
+.product-detail__name {
+  font-size: 30px;
+  color: #96514d;
+}
+
+.product-detail__content {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+table {
+  font-size: 18px;
+}
+
+table th {
+  color: #96514d;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #e6b9b8;
+  font-weight: lighter;
+}
+
+table td {
+  line-height: 50px;
+  text-align: center;
+  width: 300px;
+}
+
+.link-area {
+  width: 700px;
+  margin: 0 auto 40px;
+  padding-left: 50px;
+}
+

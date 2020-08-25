@@ -65,7 +65,7 @@
       print '<input type="hidden" name="name" value="'.$name.'">';
       print '<input type="hidden" name="tel" value="'.$tel.'">';
       print '<input type="button" onclick="history.back()" value="入力画面へ戻る" class="reserve-btn">';
-      print '<input type="submit" value="予約を確定する" class="reserve-btn">';
+      print '<input type="submit" value="予約を確定する" class="submit-btn">';
       print '</form>';
     ?>
 </div>

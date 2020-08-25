@@ -34,15 +34,19 @@
       </div>
     </div>
   </header>
+  <section>
   <h1 class="title">商品一覧</h1>
   <div class="promotion">
-      箕面製餡所の美味しい定番あんこ達を紹介します。<br/>
-      減農薬・有機肥料にこだわり生産を続ける<br/>
-      北海道十勝の契約農家から仕入れた小豆を使用しています。<br/><br/>
-      掲載商品の他にも特注商品を含め、<br/>
-      年間約100種の商品を開発・ご提案しております。<br/>
-      こだわりのあんこ・季節のあんこ・あんこについてはぜひ<br/>
-      箕面製餡所にご相談ください！
+      <div class="promotion__content">
+        箕面製餡所の美味しい定番あんこ達を紹介します。<br/>
+        減農薬・有機肥料にこだわり生産を続ける<br/>
+        北海道十勝の契約農家から仕入れた小豆を使用しています。<br/><br/>
+        掲載商品の他にも特注商品を含め、<br/>
+        年間約100種の商品を開発・ご提案しております。<br/>
+        こだわりのあんこ・季節のあんこ・あんこについてはぜひ<br/>
+        箕面製餡所にご相談ください！
+      </div>
+      <img src="../images/promotion.png" class="promotion__img">
   </div>
   <div class="products-wrapper">
     <?php
@@ -86,6 +90,7 @@
   
   ?>
   </div>
+  </section>
   <div class="footer">
     <div class="footer-top">
       <ul class="footer-list">
