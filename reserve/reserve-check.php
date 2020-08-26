@@ -33,7 +33,7 @@
     </div>
   </div>
   </header>
-  <h1 class="reserve-title">予約内容の確認</h1>
+  <h1 class="title">予約内容の確認</h1>
   <div class="customer-form-wrapper">
     <?php
       $year = $_POST['year'];
@@ -65,7 +65,7 @@
       print '<input type="hidden" name="name" value="'.$name.'">';
       print '<input type="hidden" name="tel" value="'.$tel.'">';
       print '<input type="button" onclick="history.back()" value="入力画面へ戻る" class="reserve-btn">';
-      print '<input type="submit" value="予約を確定する" class="reserve-btn">';
+      print '<input type="submit" value="予約を確定する" class="submit-btn">';
       print '</form>';
     ?>
 </div>

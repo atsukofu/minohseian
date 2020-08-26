@@ -33,7 +33,7 @@
       </div>
     </div>
   </header>
-  <h1 class="reserve-title">お客様上情報入力ページ</h1>
+  <h1 class="title">お客様上情報入力ページ</h1>
   <div class="customer-form-wrapper">
     <?php
       $year = $_GET['year'];
@@ -62,7 +62,7 @@
     print '<input type="hidden" name="month" value="'.$month.'">';
     print '<input type="hidden" name="day" value="'.$day.'">';
     ?>
-    <input type="submit" value="予約する">
+    <input type="submit" value="予約する" class="submit-btn">
     </form>
   </div>
   <div class="footer">

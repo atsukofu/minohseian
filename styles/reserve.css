@@ -1,4 +1,4 @@
-.reserve-title {
+.title {
   font-size: 40px;
   color: #96514d;
   text-align: center;
@@ -91,7 +91,7 @@
   line-height: 20px;
 }
 
-.reserve-btn {
+.submit-btn {
   border: black solid 1px;
   border-radius: 4px;
   margin-right: 10px;

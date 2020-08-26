@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>おいしいあんこ屋さん 箕面製餡所</title>
   <link rel="stylesheet" href="../styles/index.css">
-  <link rel="stylesheet" href="../styles/contact.css">
   <link rel="stylesheet" href="../styles/reserve.css">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
@@ -34,7 +33,7 @@
       </div>
     </div>
   </header>
-  <h1 class="reserve-title">お問い合わせ内容確認</h1>
+  <h1 class="title">お問い合わせ内容確認</h1>
   <div class="customer-form-wrapper">
     <p>以下の内容で送信いたします。</p><br />
   <?php
