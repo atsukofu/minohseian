@@ -76,7 +76,7 @@
         <li><a href="/minohseian/product/pro-index.php">商品紹介</a></li>
         <li><a href="/minohseian/reserve/new-reserve.php">和菓子教室</a></li>
         <li><a href="/minohseian/contact/contact-new.html">お問い合わせ</a></li>
-        <li><a href="#">STAFF</a></li>
+        <li><a href="../minohseian/staff/staff-login-check.php">STAFF</a></li>
       </ul>
       <div class="footer-company-wrapper">
       <img src="../images/footer_logo.png" class="footer-logo">

@@ -34,48 +34,47 @@
     </div>
   </header>
   <section>
-  <h1 class="title">スタッフ登録確認</h1>
+  <h1 class="title">ログインできませんでした</h1>
   <div class="customer-form-wrapper" style="padding-left: 300px;">
   <?php
+    try {
+   
     $staff_name = $_POST['name'];
     $staff_pass = $_POST['password'];
-    $staff_pass2 = $_POST['password2'];
 
     $staff_name = htmlspecialchars($staff_name,ENT_QUOTES,'UTF-8');
     $staff_pass = htmlspecialchars($staff_pass,ENT_QUOTES,'UTF-8');
-    $staff_pass2 = htmlspecialchars($staff_pass2,ENT_QUOTES,'UTF-8');
 
-    if($staff_name == ""){
-      print 'スタッフ名が入力されていません<br/>';
+    $staff_pass = md5($staff_pass);
+    $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
+    $user = 'root';
+    $password = '';
+    $dbh = new PDO($dsn,$user,$password);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+    $sql = 'SELECT id FROM staff WHERE name=? AND password=?';
+    $stmt = $dbh->prepare($sql);
+    $data[] = $staff_name;
+    $data[] = $staff_pass;
+    $stmt->execute($data);
+
+    $dbh = null;
+
+    $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+    if($rec == false) {
+      print 'スタッフ名かパスワードが間違っています。<br/>';
+      print '<a href="staff-login.html">戻る</a>';
     } else {
-      print 'スタッフ名：';
-      print $staff_name;
-      print '<br/>';
-    }
-
-    if($staff_pass == ""){
-      print 'パスワードが入力されていません。<br/>';
+      header('Location:staff-top.php');
+      exit();
     } 
-
-    if($staff_pass != $staff_pass2) {
-      print 'パスワードが一致しません。<br/>';
-    }
-
-    if($staff_name == "" || $staff_pass == "" || $staff_pass != $staff_pass2){
-      print '<form>';
-      print '<input type="button" oclick="history.back()" value="戻る">';
-      print '</form>';
-    } else {
-      $staff_pass = md5($staff_pass);
-      print '<form method="post" action="staff-add-done.php">';
-      print '<input type="hidden" name="name" value="'.$staff_name.'">';
-      print '<input type="hidden" name="password" value="'.$staff_pass.'">';
-      print '<br/>';
-      print '<input type="submit" value="登録する" class="submit-btn">';
-      print '</form>';
-    }
-    
-?>
+  } catch (Exception $e){
+    print 'ただいま障害により大変ご迷惑をおかけしております。';
+    exit();
+  }
+  ?>
 </section>
   <div class="footer">
     <div class="footer-top">

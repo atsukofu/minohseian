@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>おいしいあんこ屋さん 箕面製餡所</title>
-  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/reserve.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <?php include( dirname(__FILE__) . "../../modules/header.html"); ?>
+  </header>
+  <h2 class="title">教室予約一覧</h2>
+  <div class="reserve-table">
   <?php
     try {
 
@@ -21,13 +28,12 @@
 
       $dbh = null;
 
-      print '<h2>手作り和菓子教室 ご予約一覧</h2>';
-      print '<table border="1">';
-      print '<tr>';
-      print '<th>日付</th>';
-      print '<th>人数</th>';
-      print '<th>ご予約名</th>';
-      print '<th>お電話番号</th>';
+      print '<table border="1" class="reserve-index">';
+      print '<tr style="background-color:#e6b9b8;color:#fff;text-align:center;">';
+      print '<th style="width:200px; text-align:center;" >日付</th>';
+      print '<th style="width:80px; text-align:center;">人数</th>';
+      print '<th style="width:200px; text-align:center;">ご予約名</th>';
+      print '<th style="width:200px; text-align:center;">お電話番号</th>';
       print '</tr>';
       while(true) {
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -49,6 +55,6 @@
       }
 
       ?>
-
+    </div>
     </body>
     </html>
