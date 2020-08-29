@@ -68,5 +68,10 @@
     </div>
     <a href="staff-top.php" class="backlink backstaffmenu" style="height:30px;">スタッフメニューのページへ戻る</a>
   </div>
+  <div class="footer">
+    <?php
+      include( dirname(__FILE__) . '../../modules/footer.html');
+    ?>
+  </div>
   </body>
 </html>
