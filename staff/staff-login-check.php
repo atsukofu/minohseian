@@ -67,6 +67,10 @@
       print 'スタッフ名かパスワードが間違っています。<br/>';
       print '<a href="staff-login.html">戻る</a>';
     } else {
+      session_start();
+      $_SESSION['login'] = 1;
+      $_SESSION['staff_id'] = $rec['id'];
+      $_SESSION['staff_name'] = $staff_name;
       header('Location:staff-top.php');
       exit();
     } 

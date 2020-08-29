@@ -1,11 +1,10 @@
 <?php
   session_start();
-  session_regenerate_id(true);
-  if(isset($_SESSION['login'])==false){
-    print 'ログインされていません。<br/>';
-    print '<a href="staff-login.html">ログイン画面へ</a>';
-    exit();
+  $_SESSION = array();
+  if(isset($_COOKIE[session_name()])==true){
+    setcookie(session_name(), '', time()-42000, '/');
   }
+  session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -21,15 +20,10 @@
   <header>
     <?php include( dirname(__FILE__) . '../../modules/header.html'); ?>
   </header>
-  <h1 class="title">スタッフ専用ページ</h1>
+  <h1 class="title">ログアウトしました</h1>
   <div class="customer-form-wrapper">
-    <?php 
-      print '<div class="staff-name">スタッフ名:'.$_SESSION['staff_name'].'</div>';
-      print '<br/><br/>' ;
-    ?>
-    <a href="add-pro.php" class="staff-menu">商品登録</a>
-    <a href="index-reserve.php" class="staff-menu">教室予約確認</a><br/><br/>
-    <a href="staff-logout.php" class=staff-menu>ログアウト</a>
+    <a href="staff-login.html" class="staff-menu">ログイン画面へ</a><br/><br/>
+    <a href="../index.html" class="staff-menu">トップページへ</a>
   </div>
   <div class="footer">
     <?php include( dirname(__FILE__) . '../../modules/footer.html'); ?>

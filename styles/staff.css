@@ -1,0 +1,11 @@
+.staff-name {
+  font-size: 20px;
+}
+
+.staff-menu {
+  margin-right: 20px;
+}
+
+.staff-menu:hover {
+  border-bottom: #000 1px solid;
+}
