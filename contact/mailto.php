@@ -16,6 +16,6 @@ $headers = "From: .$contact_email";
 
 mail($to, $subject, $message, $headers);
 
-header('Location:mail-done.html');
+header('Location:mail-done.php');
     exit();
 ?>

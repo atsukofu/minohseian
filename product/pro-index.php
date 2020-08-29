@@ -10,29 +10,9 @@
 </head>
 <body>
   <header>
-    <div class="header-left">
-      <p class="header-text">大阪北部の箕面市で100年愛されるあんこやさんです。</p>
-      <img src="../images/logo.png" class="header-logo">
-    </div>
-    <div class="header-right">
-      <div class="header-tel">
-        <i class="fas fa-phone-volume"></i>
-        <span class="telnumber">072-014-085</span>
-        <p class="business-time">月〜金 9:00~18:00</p>
-      </div>
-      <div class="header-menu">
-        <ul class="menu-list">
-          <li><a href="#">会社概要</a></li>
-          <li><a href="product/pro-index.php">商品紹介</a></li>
-          <li><a href="reserve/new-reserve.php">和菓子教室</a></li>
-          <li><a href="contact/contact-new.html">お問い合わせ</a></li>
-          <li>
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter-square"></i>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <?php
+    include( dirname(__FILE__) . '../../modules/header.html');
+  ?>
   </header>
   <section>
   <h1 class="title">商品一覧</h1>
@@ -92,23 +72,9 @@
   </div>
   </section>
   <div class="footer">
-    <div class="footer-top">
-      <ul class="footer-list">
-        <li><a href="/minohseian/index.html">HOME</a></li>
-        <li><a href="#">会社概要</a></li>
-        <li><a href="/minohseian/product/pro-index.php">商品紹介</a></li>
-        <li><a href="/minohseian/reserve/new-reserve.php">和菓子教室</a></li>
-        <li><a href="/minohseian/contact/contact-new.html">お問い合わせ</a></li>
-        <li><a href="#">STAFF</a></li>
-      </ul>
-      <div class="footer-company-wrapper">
-        <img src="../images/footer_logo.png" class="footer-logo">
-        <div class="footer-address">〒590-0021<br/>大阪府箕面市みのお台<br/>1丁目23番</div>
-      </div>
-      </div>
-    <div class="footer-bottom">
-      Copyright (c) 箕面製饀所 Co., Ltd All rights reserved.
-    </div>
+    <?php
+      include( dirname(__FILE__) . '../../modules/footer.html');
+    ?>
   </div>
 </body>
 </html>
