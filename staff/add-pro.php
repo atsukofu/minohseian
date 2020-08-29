@@ -32,8 +32,8 @@
       <p class="form-introduction">画像の選択</p>
       <input type="file" name="image" style="width: 400px;"><br />
       <br/>
-      <input type="button" onclick="history.back()" value="戻る" class="submit-btn">
-      <input type="submit" value="登録" class="submit-btn">
+      <input type="submit" value="登録" class="submit-btn"><br/><br/>
+      <a href="staff-top.php" class="backlink backstaffmenu" style="height:30px;">スタッフメニューのページへ戻る</a>
     </form>
   </div>
 </section>
