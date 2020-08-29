@@ -16,6 +16,9 @@
   <h1 class="title">ご予約ありがとうございます。</h1>
   <div class="customer-form-wrapper">
     <?php
+      $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
+      $db['dbname'] = ltrim($db['path'], '/');
+      $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
     try{
       $reserve_date = $_POST['reserve_date'];
       $people = $_POST['people'];
@@ -28,17 +31,10 @@
       $tel = htmlspecialchars($tel,ENT_QUOTES,'UTF-8');
 
       
-      $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
-      $db['dbname'] = ltrim($db['path'], '/');
-      $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
-      $user = $db['user'];
-      $password = $db['pass'];
-      $options = array(
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
-      );
-      $dbh = new PDO($dsn, $user, $password, $options);
+    
+      $db = new PDO($dsn, $db['user'], $db['pass']);
+      $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRORMODE_EXCEPTION);
   
 
       $sql = 'INSERT INTO reservations(reserve_date,people,name,tel) VALUES (?,?,?,?)';
