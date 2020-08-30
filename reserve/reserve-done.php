@@ -20,6 +20,8 @@
       $db['dbname'] = ltrim($db['path'], '/');
       $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
     try{
+      require_once('../../modules/dbconnect.php');
+
       $reserve_date = $_POST['reserve_date'];
       $people = $_POST['people'];
       $name = $_POST['name'];
@@ -32,9 +34,9 @@
 
       
     
-      $db = new PDO($dsn, $db['user'], $db['pass']);
-      $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRORMODE_EXCEPTION);
+      // $db = new PDO($dsn, $db['user'], $db['pass']);
+      // $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+      // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRORMODE_EXCEPTION);
   
 
       $sql = 'INSERT INTO reservations(reserve_date,people,name,tel) VALUES (?,?,?,?)';
