@@ -49,7 +49,7 @@
   }
 ?>
 <br/>
-<a href="staff-add.html" class="backlink">スタッフ登録ページへ戻る</a>
+<a href="staff-add.php" class="backlink">スタッフ登録ページへ戻る</a>
 </section>
   <div class="footer">
     <?php
