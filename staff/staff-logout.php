@@ -22,8 +22,8 @@
   </header>
   <h1 class="title">ログアウトしました</h1>
   <div class="customer-form-wrapper">
-    <a href="staff-login.html" class="staff-menu">ログイン画面へ</a><br/><br/>
-    <a href="../index.html" class="staff-menu">トップページへ</a>
+    <a href="staff-login.php" class="staff-menu">ログイン画面へ</a><br/><br/>
+    <a href="../index.php" class="staff-menu">トップページへ</a>
   </div>
   <div class="footer">
     <?php include( dirname(__FILE__) . '../../modules/footer.html'); ?>

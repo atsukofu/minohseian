@@ -48,7 +48,7 @@
 </section>
 <div class="footer">
   <?php
-    include( dirname(__FILE__) . '/footer.html');
+    include( dirname(__FILE__) . '../../modules/footer.html');
   ?>
 </div>
 </body>

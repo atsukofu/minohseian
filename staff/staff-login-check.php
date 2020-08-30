@@ -46,7 +46,7 @@
 
     if($rec == false) {
       print 'スタッフ名かパスワードが間違っています。<br/>';
-      print '<a href="staff-login.html">戻る</a>';
+      print '<a href="staff-login.php">戻る</a>';
     } else {
       session_start();
       $_SESSION['login'] = 1;

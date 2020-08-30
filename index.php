@@ -9,7 +9,8 @@
 </head>
 <body>
   <header>
-    <div class="header-left">
+    <?php include( dirname(__FILE__) . "/modules/header.html"); ?>
+    <!-- <div class="header-left">
       <p class="header-text">大阪北部の箕面市で100年愛されるあんこやさんです。</p>
       <img src="images/logo.png" class="header-logo">
     </div>
@@ -31,7 +32,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
   </header>
   <section class="page-top">
     <div class="top-slider">
@@ -85,12 +86,13 @@
     </div>
   </section>
   <div class="footer">
-    <div class="footer-top">
+    <?php include( dirname(__FILE__) . "/modules/header.html"); ?>
+    <!-- <div class="footer-top">
       <ul class="footer-list">
-        <li><a href="/minohseian/index.html">HOME</a></li>
+        <li><a href="/index.html">HOME</a></li>
         <li><a href="#">会社概要</a></li>
-        <li><a href="/minohseian/product/pro-index.php">商品紹介</a></li>
-        <li><a href="/minohseian/reserve/new-reserve.php">和菓子教室</a></li>
+        <li><a href="/product/pro-index.php">商品紹介</a></li>
+        <li><a href="/reserve/new-reserve.php">和菓子教室</a></li>
         <li><a href="/minohseian/contact/contact-new.php">お問い合わせ</a></li>
         <li><a href="#">STAFF</a></li>
       </ul>
@@ -101,7 +103,7 @@
       </div>
     <div class="footer-bottom">
       Copyright (c) 箕面製饀所 Co., Ltd All rights reserved.
-    </div>
+    </div> -->
   </div>
   </body>
 </html>
