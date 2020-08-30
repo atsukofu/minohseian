@@ -27,6 +27,8 @@
   <div class="customer-form-wrapper">
   <?php
     try {
+      require_once('../../modules/dbconnect.php');
+
       $pro_name = $_POST['name'];
       $pro_content = $_POST['content'];
       $pro_brix = $_POST['brix'];
@@ -42,11 +44,11 @@
       $pro_preserve = htmlspecialchars($pro_preserve,ENT_QUOTES,'UTF-8');
       $pro_expir = htmlspecialchars($pro_expir,ENT_QUOTES,'UTF-8');
 
-      $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
-      $user = 'root';
-      $password = '';
-      $dbh = new PDO($dsn, $user, $password);
-      $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      // $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
+      // $user = 'root';
+      // $password = '';
+      // $dbh = new PDO($dsn, $user, $password);
+      // $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       $sql = 'INSERT INTO ankoproduct(name,content,brix,weight,preserve,expir,image)VALUES (?,?,?,?,?,?,?)';
       $stmt = $dbh->prepare($sql);

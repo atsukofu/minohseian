@@ -19,7 +19,7 @@
   <?php
 
   try{
-    require_once('dbconnect.php');
+    require_once('../../modules/dbconnect.php');
 
     $staff_name = $_POST['name'];
     $staff_pass = $_POST['password'];
