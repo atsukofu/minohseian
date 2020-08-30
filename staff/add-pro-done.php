@@ -12,8 +12,8 @@
 <head>
   <meta charset="UTF-8">
   <title>おいしいあんこ屋さん 箕面製餡所</title>
-  <link rel="stylesheet" href="styles/index.css">
-  <link rel="stylesheet" href="styles/reserve.css">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/reserve.css">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>

@@ -12,8 +12,8 @@
 <head>
   <meta charset="UTF-8">
   <title>おいしいあんこ屋さん 箕面製餡所</title>
-  <link rel="stylesheet" href="styles/index.css">
-  <link rel="stylesheet" href="styles/reserve.css">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/reserve.css">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
@@ -46,8 +46,8 @@
       if($pro_image['size'] > 1000000) {
         print '画像が大きすぎます。';
       } else {
-        move_uploaded_file($pro_image['tmp_name'],'gazou/'.$pro_image['name']);
-        print '<img src = "gazou/'.$pro_image['name'].'" style="width:200px;height:200px;">';
+        move_uploaded_file($pro_image['tmp_name'],'../gazou/'.$pro_image['name']);
+        print '<img src = "../gazou/'.$pro_image['name'].'" style="width:200px;height:200px;">';
       }
     }
     print '</div>';
