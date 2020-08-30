@@ -18,7 +18,7 @@
   <div class="customer-form-wrapper" style="padding-left: 300px;">
   <?php
     try {
-    require_once('../../modules/dbconnect.php');
+    require_once('dbconnect.php');
 
     $staff_name = $_POST['name'];
     $staff_pass = $_POST['password'];

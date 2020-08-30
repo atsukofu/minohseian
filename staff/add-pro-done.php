@@ -27,7 +27,7 @@
   <div class="customer-form-wrapper">
   <?php
     try {
-      require_once('../../modules/dbconnect.php');
+      require_once('dbconnect.php');
 
       $pro_name = $_POST['name'];
       $pro_content = $_POST['content'];

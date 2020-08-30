@@ -20,7 +20,7 @@
       $db['dbname'] = ltrim($db['path'], '/');
       $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
     try{
-      require_once('../../modules/dbconnect.php');
+      require_once('dbconnect.php');
 
       $reserve_date = $_POST['reserve_date'];
       $people = $_POST['people'];
