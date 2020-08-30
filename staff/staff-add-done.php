@@ -25,18 +25,44 @@
     $staff_name = htmlspecialchars($staff_name,ENT_QUOTES,'UTF-8');
     $staff_pass = htmlspecialchars($staff_pass,ENT_QUOTES,'UTF-8');
 
-    $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
-    $user = 'root';
-    $password = '';
-    $dbh = new PDO($dsn,$user,$password);
-    $dbh -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    $sql = 'INSERT INTO staff (name, password) VALUES(?,?)';
-    $stmt = $dbh->prepare($sql);
-    $data[] = $staff_name;
-    $data[] = $staff_pass;
-    $stmt->execute($data);
+    $filename = '.isDevelopment.txt';
+    if(!file_exists($filenmae)){
 
-    $dbh = null;
+      // For heroku
+      $url = parse_url(getenv('CLEARDB_DATABASE_URL'));
+
+      $server = $url["host"];
+      $username = $url["user"];
+      $password = $url["pass"];
+      $db = substr($url["path"], 1);
+
+      $pdo = new PDO(
+        'mysql:host=' . $server . ';dbname=' . $db . ';charset=utf8mb4',
+        $username,
+        $password,
+        [
+          PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
+          PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,
+          PDO::MYSQL_ATTR_USE_BUFFERED_QUERY=>true,
+        ]
+        );
+        return $pdo;
+    } else {
+
+      
+      $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
+      $user = 'root';
+      $password = '';
+      $dbh = new PDO($dsn,$user,$password);
+      $dbh -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+      $sql = 'INSERT INTO staff (name, password) VALUES(?,?)';
+      $stmt = $dbh->prepare($sql);
+      $data[] = $staff_name;
+      $data[] = $staff_pass;
+      $stmt->execute($data);
+      
+      $dbh = null;
+    }
 
     print $staff_name."さんを登録しました。<br/>";
     
