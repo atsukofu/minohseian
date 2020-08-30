@@ -28,7 +28,8 @@
       print '<br/><br/>' ;
     ?>
     <a href="add-pro.php" class="staff-menu">商品登録</a>
-    <a href="index-reserve.php" class="staff-menu">教室予約確認</a><br/><br/>
+    <a href="index-reserve.php" class="staff-menu">教室予約確認</a>
+    <a href="staff-add.php" class="staff-menu">スタッフ登録</a><br/><br/>
     <a href="staff-logout.php" class=staff-menu>ログアウト</a>
   </div>
   <div class="footer">

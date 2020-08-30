@@ -5,12 +5,15 @@
   <title>おいしいあんこ屋さん 箕面製餡所</title>
   <link rel="stylesheet" href="styles/index.css">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/slick-theme.css"/>
 </head>
+<script src="jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="slick.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
 <body>
   <header>
-    <?php include( dirname(__FILE__) . "/modules/header.html"); ?>
-    <!-- <div class="header-left">
+    <div class="header-left">
       <p class="header-text">大阪北部の箕面市で100年愛されるあんこやさんです。</p>
       <img src="images/logo.png" class="header-logo">
     </div>
@@ -32,22 +35,21 @@
           </li>
         </ul>
       </div>
-    </div> -->
+    </div>
   </header>
   <section class="page-top">
-    <div class="top-slider">
-      <img src="images/main1.png" class="main1">
-    </div>
-    <div>
-      <ul class="dots">
-        <li class="dot">・</li>
-        <li class="dot">・</li>
-        <li class="dot">・</li>
-      </ul>
-    </div>
+    <ul class="slick">
+      <li><img src="images/main1.png" class="main1"></li>
+      <li><img src="images/main2.png" class="main1"></li>
+      <li><img src="images/main3.png" class="main1"></li>
+    </ul>
     <div class="product-info">
       <h2 class="product-info__title">商品紹介</h2>
-      <div class="product-info__image">画像</div>
+      <div class="product-info__content">
+        箕面製餡自慢の定番商品のご紹介ページです。<br>
+        気になる商品やOEMについては<br>
+        フォームや電話でお気軽にお問い合わせください。
+      </div>
       <a href="product/pro-index.php" class="product-info__link">商品紹介ページへ</a>
     </div>
     <div class="handmade-wrapper">
@@ -86,15 +88,14 @@
     </div>
   </section>
   <div class="footer">
-    <?php include( dirname(__FILE__) . "/modules/header.html"); ?>
-    <!-- <div class="footer-top">
+    <div class="footer-top">
       <ul class="footer-list">
         <li><a href="/index.html">HOME</a></li>
         <li><a href="#">会社概要</a></li>
         <li><a href="/product/pro-index.php">商品紹介</a></li>
         <li><a href="/reserve/new-reserve.php">和菓子教室</a></li>
-        <li><a href="/minohseian/contact/contact-new.php">お問い合わせ</a></li>
-        <li><a href="#">STAFF</a></li>
+        <li><a href="/contact/contact-new.php">お問い合わせ</a></li>
+        <li><a href="/staff/staff-login.php">STAFF</a></li>
       </ul>
       <div class="footer-company-wrapper">
         <img src="images/footer_logo.png" class="footer-logo">
@@ -103,7 +104,7 @@
       </div>
     <div class="footer-bottom">
       Copyright (c) 箕面製饀所 Co., Ltd All rights reserved.
-    </div> -->
+    </div>
   </div>
   </body>
 </html>
