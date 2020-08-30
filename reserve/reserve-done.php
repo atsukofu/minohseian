@@ -54,7 +54,7 @@
       print "様 ご予約ありがとうございます！<br /><br/>";
       print "料金は当日現金またはクレジットカード払いにて承ります。<br /><br/>";
       print "キャンセルされる場合は、2日前までにメールフォーム<br/><br/>またはお電話にてご連絡いただきますよう、よろしくお願いいたします。<br /><br/>";
-      print '<a href="../index.html" class="backlink">';
+      print '<a href="/index.html" class="backlink">';
       print 'トップページへ戻る';
       print '</a>';
       print '</p>';

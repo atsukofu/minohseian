@@ -16,7 +16,7 @@
   <h1 class="title">お問い合わせを承りました。</h1>
   <div class="customer-form-wrapper">
   メールの送信が完了しました。<br /><br />
-  <a href="../index.html" class="backlink">トップページへ戻る</a>
+  <a href="/index.html" class="backlink">トップページへ戻る</a>
   </div>
   <div class="footer">
   <?php
