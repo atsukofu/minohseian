@@ -1,11 +1,12 @@
 @import url("reset.css");
 
 html{
-  width: 100%;
+  width: 1400px;
 }
 
 body {
-  width: 100%;
+  max-width: 100%;
+  min-width: 1300px;
   box-sizing: border-box;
   padding: 0;
 }

@@ -8,7 +8,7 @@
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
-<header>
+  <header>
     <?php include( dirname(__FILE__) . '../../modules/header.html'); ?>
   </header>
   <h1 class="title">手作り和菓子教室のご案内</h1>
@@ -190,7 +190,5 @@ $dd = 1;
     include( dirname(__FILE__) . '../../modules/footer.html');
   ?>
 </div>
-
-
 </body>
 </html>
