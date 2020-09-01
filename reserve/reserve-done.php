@@ -61,18 +61,18 @@
 
     } catch(Exception $e) {
       print 'ただいま障害により大変ご迷惑をおかけしております。';
-      exit();
       print '<a href="new-reserve.php">';
       print '予約申込みページへ戻る';
       print '</a>';
+      exit();
     }
     ?>
-</div>
-<div class="footer">  
-  <?php
-    include( dirname(__FILE__) . '../../modules/footer.html');
-  ?>
-</div>
+  </div>
+  <div class="footer">  
+    <?php
+      include( dirname(__FILE__) . '../../modules/footer.html');
+    ?>
+  </div>
 
 </body>
 </html>
