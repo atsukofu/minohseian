@@ -18,7 +18,7 @@
   <div class="customer-form-wrapper" style="padding-left: 300px;">
   <?php
     try {
-    // require_once('dbconnect.php');
+    require_once('dbconnect.php');
 
     $staff_name = $_POST['name'];
     $staff_pass = $_POST['password'];
@@ -27,11 +27,11 @@
     $staff_pass = htmlspecialchars($staff_pass,ENT_QUOTES,'UTF-8');
 
     $staff_pass = md5($staff_pass);
-    $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
-    $user = 'root';
-    $password = '';
-    $dbh = new PDO($dsn,$user,$password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    // $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
+    // $user = 'root';
+    // $password = '';
+    // $dbh = new PDO($dsn,$user,$password);
+    // $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
     $sql = 'SELECT id FROM staff WHERE name=? AND password=?';
     $stmt = $dbh->prepare($sql);
