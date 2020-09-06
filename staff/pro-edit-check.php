@@ -24,8 +24,8 @@
   <h1 class="title">商品情報編集ページ</h1>
   <div class="customer-form-wrapper">
     <?php 
-      // try {
-        // require_once('dbconnect.php');
+      try {
+   
       $pro_id = $_POST['id'];
       $pro_name = $_POST['name'];
       $pro_content = $_POST['content'];
@@ -90,12 +90,10 @@
         print $pro_expir;
         print '<br/><br/>';
       }
-     
-          
-      // } catch (Exception $e) {
-      //   print 'ただいま障害により大変ご迷惑をおかけしております。';
-      //   exit();
-      // }
+      } catch (Exception $e) {
+        print 'ただいま障害により大変ご迷惑をおかけしております。';
+        exit();
+      }
       print '<form method="post" action="pro-edit-done.php" enctype="multipart/form-data">';
       print '<input type="hidden" name="id" value="'.$pro_id.'">';
       print '<input type="hidden" name="name" style="width:300px" value="'.$pro_name.'">';

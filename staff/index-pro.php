@@ -25,13 +25,13 @@
   <div class="customer-form-wrapper">
     <?php 
       try {
-        // require_once('dbconnect.php');
+        require_once('dbconnect.php');
 
-        $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
-        $user = 'root';
-        $password = '';
-        $dbh = new PDO($dsn,$user,$password);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        // $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
+        // $user = 'root';
+        // $password = '';
+        // $dbh = new PDO($dsn,$user,$password);
+        // $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         
         $sql = 'SELECT id,name FROM ankoproduct WHERE 1';
         $stmt = $dbh->prepare($sql);
@@ -50,6 +50,7 @@
           print '<br/>';
 
         }
+        print '<br/>';
         print '<input type="submit" name="delete" value="削除" class="submit-btn">';
         print '<input type="submit" name="edit" value="編集" class="submit-btn">';
         print '</form>';

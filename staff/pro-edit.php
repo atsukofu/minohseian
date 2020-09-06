@@ -25,14 +25,15 @@
   <div class="customer-form-wrapper">
     <?php 
       try {
-        // require_once('dbconnect.php');
+        require_once('dbconnect.php');
+        
         $pro_id = $_GET['id'];
 
-        $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
-        $user = 'root';
-        $password = '';
-        $dbh = new PDO($dsn,$user,$password);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        // $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
+        // $user = 'root';
+        // $password = '';
+        // $dbh = new PDO($dsn,$user,$password);
+        // $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         
         $sql = 'SELECT name,content,brix,weight,preserve,expir FROM ankoproduct WHERE id=?';
         $stmt = $dbh->prepare($sql);
