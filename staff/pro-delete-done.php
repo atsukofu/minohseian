@@ -21,17 +21,35 @@
   <header>
     <?php include( dirname(__FILE__) . '../../modules/header.html'); ?>
   </header>
-  <h1 class="title">スタッフ専用ページ</h1>
+  <h1 class="title">商品削除完了</h1>
   <div class="customer-form-wrapper">
     <?php 
-      print '<div class="staff-name">スタッフ名:'.$_SESSION['staff_name'].'</div>';
-      print '<br/><br/>' ;
+      try {
+        require_once('dbconnect.php');
+      $pro_id = $_POST['id'];
+
+      $pro_id = htmlspecialchars($pro_id,ENT_QUOTES,'UTF-8');
+    
+      // $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
+      // $user = 'root';
+      // $password = '';
+      // $dbh = new PDO($dsn,$user,$password);
+      // $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        
+      $sql = 'DELETE FROM ankoproduct WHERE id=?';
+      $stmt = $dbh->prepare($sql);
+      $data[] = $pro_id;
+      $stmt->execute($data);
+
+      $dbh = null;
+        
+      } catch (Exception $e) {
+        print 'ただいま障害により大変ご迷惑をおかけしております。';
+        exit();
+      }
     ?>
-    <a href="add-pro.php" class="staff-menu">商品登録</a>
-    <a href="index-pro.php" class="staff-menu">商品編集</a>
-    <a href="index-reserve.php" class="staff-menu">教室予約確認</a>
-    <a href="staff-add.php" class="staff-menu">スタッフ登録</a><br/><br/>
-    <a href="staff-logout.php" class=staff-menu>ログアウト</a>
+    <p>商品を削除しました。</p>
+    <a href="staff-top.php" class="backlink">スタッフメニューのページへ戻る</a>
   </div>
   <div class="footer">
     <?php include( dirname(__FILE__) . '../../modules/footer.html'); ?>
