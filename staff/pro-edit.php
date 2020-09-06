@@ -26,7 +26,7 @@
     <?php 
       try {
         // require_once('dbconnect.php');
-        $pro_id = $_POST['id'];
+        $pro_id = $_GET['id'];
 
         $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
         $user = 'root';

@@ -21,44 +21,35 @@
   <header>
     <?php include( dirname(__FILE__) . '../../modules/header.html'); ?>
   </header>
-  <h1 class="title">商品一覧ページ</h1>
+  <h1 class="title">商品削除完了</h1>
   <div class="customer-form-wrapper">
     <?php 
       try {
         // require_once('dbconnect.php');
+      $pro_id = $_POST['id'];
 
-        $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
-        $user = 'root';
-        $password = '';
-        $dbh = new PDO($dsn,$user,$password);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+      $pro_id = htmlspecialchars($pro_id,ENT_QUOTES,'UTF-8');
+    
+      $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
+      $user = 'root';
+      $password = '';
+      $dbh = new PDO($dsn,$user,$password);
+      $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         
-        $sql = 'SELECT id,name FROM ankoproduct WHERE 1';
-        $stmt = $dbh->prepare($sql);
-        $stmt->execute();
+      $sql = 'DELETE FROM ankoproduct WHERE id=?';
+      $stmt = $dbh->prepare($sql);
+      $data[] = $pro_id;
+      $stmt->execute($data);
 
-        $dbh = null;
-
-        print '<form method="post" action="pro-branch.php">';
-        while(true){
-          $rec = $stmt->fetch(PDO::FETCH_ASSOC);
-          if($rec==false){
-          break;
-          }
-          print '<input type="radio" name="id" value="'.$rec['id'].'">';
-          print $rec['name'];
-          print '<br/>';
-
-        }
-        print '<input type="submit" name="delete" value="削除" class="submit-btn">';
-        print '<input type="submit" name="edit" value="編集" class="submit-btn">';
-        print '</form>';
+      $dbh = null;
         
       } catch (Exception $e) {
         print 'ただいま障害により大変ご迷惑をおかけしております。';
         exit();
       }
     ?>
+    <p>商品を削除しました。</p>
+    <a href="staff-top.php" class="backlink">スタッフメニューのページへ戻る</a>
   </div>
   <div class="footer">
     <?php include( dirname(__FILE__) . '../../modules/footer.html'); ?>
