@@ -26,10 +26,9 @@
   <h2 class="title">登録完了</h2>
   <div class="customer-form-wrapper">
     <?php
-      require_once('../../vendor/autoload.php');
+      require_once "../../vendor/autoload.php";
       use Aws\S3\S3Client;
     try {
-      
       require_once('dbconnect.php');
 
       $pro_name = $_POST['name'];
@@ -77,13 +76,13 @@
         ),
         'region'  => 'ap-northeast-1', // 東京リージョン
       ));
-
+      
       // アップロードされた画像の処理
       $file = $_FILES['file']['tmp_name'];
       if (!is_uploaded_file($file)) {
-          return;
+        return;
       }
-
+      
       // S3バケットに画像をアップロード
       $result = $s3->putObject(array(
         'Bucket' => $bucket,
@@ -92,16 +91,16 @@
         'ACL' => 'public-read', // 画像は一般公開されます
         'ContentType' => mime_content_type($file),
       ));
-
+      
       // 結果を表示
       echo "<pre>";
       var_dump($result);
       echo "</pre>";
-
-    $dbh = null;
-
-    print $pro_name;
-    print 'を登録しました。<br /><br/>';
+      
+      $dbh = null;
+      
+      print $pro_name;
+      print 'を登録しました。<br /><br/>';
 
   } catch(Exception $e) { 
     print 'ただいま障害により大変ご迷惑をおかけしております。';
