@@ -24,7 +24,8 @@
   <h1 class="title">商品情報編集ページ</h1>
   <div class="customer-form-wrapper">
     <?php 
-      try {
+    try {
+
       require_once('dbconnect.php');
       $pro_id = $_POST['id'];
       $pro_name = $_POST['name'];
