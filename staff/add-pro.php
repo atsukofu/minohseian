@@ -25,7 +25,7 @@
   <section>
     <h2 class="title">商品情報登録ページ</h2>
     <div class="customer-form-wrapper">
-    <form method="post" action="add-pro-check.php" enctype="multipart/form-data">
+    <form method="post" action="add-pro-done.php" enctype="multipart/form-data">
       <p class="form-introduction">商品名</p>
       <input type="text" name="name" style="width:300px"><br/>
       <p class="form-introduction">商品説明文</p>
@@ -39,7 +39,7 @@
       <p class="form-introduction">賞味期限</p>
       <input type="text" name="expir" style="width: 200px;"><br>
       <p class="form-introduction">画像の選択</p>
-      <input type="file" name="image" style="width: 400px;"><br />
+      <input type="file" name="file" style="width: 400px;"><br />
       <br/>
       <input type="submit" value="登録" class="submit-btn"><br/><br/>
       <a href="staff-top.php" class="backlink backstaffmenu" style="height:30px;">スタッフメニューのページへ戻る</a>

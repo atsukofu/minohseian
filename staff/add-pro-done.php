@@ -27,10 +27,9 @@
   <div class="customer-form-wrapper">
   <?php
     try {
+      require_once('dbconnect.php');
       require_once "../../vendor/autoload.php";
       use Aws\S3\S3Client;
-      use Aws\CommandPool;
-      require_once('dbconnect.php');
 
       $pro_name = $_POST['name'];
       $pro_content = $_POST['content'];
@@ -38,7 +37,6 @@
       $pro_weight = $_POST['weight'];
       $pro_preserve = $_POST['preserve'];
       $pro_expir = $_POST['expir'];
-      $pro_image_name = $_POST['image_name'];
 
       $pro_name = htmlspecialchars($pro_name,ENT_QUOTES,'UTF-8');
       $pro_content = htmlspecialchars($pro_content,ENT_QUOTES,'UTF-8');
@@ -61,7 +59,7 @@
       $data[] = $pro_weight;
       $data[] = $pro_preserve;
       $data[] = $pro_expir;
-      $data[] = $pro_image_name;
+      // $data[] = $pro_image_name;
       $stmt->execute($data);
 
         
@@ -80,8 +78,8 @@
       ));
 
       // アップロードされた画像の処理
-      // $file = $_FILES['file']['tmp_name'];
-      if (!is_uploaded_file($pro_image_name)) {
+      $file = $_FILES['file']['tmp_name'];
+      if (!is_uploaded_file($file)) {
           return;
       }
 
@@ -89,9 +87,9 @@
       $result = $s3->putObject(array(
         'Bucket' => $bucket,
         'Key' => time() . '.jpg',
-        'Body' => fopen($pro_image_name, 'rb'),
+        'Body' => fopen($file, 'rb'),
         'ACL' => 'public-read', // 画像は一般公開されます
-        'ContentType' => mime_content_type($pro_image_name),
+        'ContentType' => mime_content_type($file),
       ));
 
       // 結果を表示
