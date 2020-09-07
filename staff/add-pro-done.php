@@ -25,12 +25,12 @@
 <section> 
   <h2 class="title">登録完了</h2>
   <div class="customer-form-wrapper">
-  <?php
-    try {
-      require_once('dbconnect.php');
+    <?php
       require_once('../../vendor/autoload.php');
       use Aws\S3\S3Client;
-
+    try {
+      
+      require_once('dbconnect.php');
 
       $pro_name = $_POST['name'];
       $pro_content = $_POST['content'];
