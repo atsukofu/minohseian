@@ -28,8 +28,9 @@
   <?php
     try {
       require_once('dbconnect.php');
-      require_once "../../vendor/autoload.php";
+      require_once('../../vendor/autoload.php');
       use Aws\S3\S3Client;
+
 
       $pro_name = $_POST['name'];
       $pro_content = $_POST['content'];
