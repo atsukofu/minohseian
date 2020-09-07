@@ -27,6 +27,9 @@
   <div class="customer-form-wrapper">
   <?php
     try {
+      require_once "../../vendor/autoload.php";
+      use Aws\S3\S3Client;
+      use Aws\CommandPool;
       require_once('dbconnect.php');
 
       $pro_name = $_POST['name'];
@@ -61,15 +64,50 @@
       $data[] = $pro_image_name;
       $stmt->execute($data);
 
-      $dbh = null;
+        
+      $bucket = 'AWS_BUCKET_BUCKET';
+      $key = 'AWS_ACCESS_KEY_ID';
+      $secret = 'AWS_SECRET_ACCESS_KEY';
 
-      print $pro_name;
-      print 'を登録しました。<br /><br/>';
+      // S3クライアントを作成
+      $s3 = new S3Client(array(
+        'version' => 'latest',
+        'credentials' => array(
+            'key' => $key,
+            'secret' => $secret,
+        ),
+        'region'  => 'ap-northeast-1', // 東京リージョン
+      ));
 
-    } catch(Exception $e) { 
-      print 'ただいま障害により大変ご迷惑をおかけしております。';
-      exit();
-    }
+      // アップロードされた画像の処理
+      // $file = $_FILES['file']['tmp_name'];
+      if (!is_uploaded_file($pro_image_name)) {
+          return;
+      }
+
+      // S3バケットに画像をアップロード
+      $result = $s3->putObject(array(
+        'Bucket' => $bucket,
+        'Key' => time() . '.jpg',
+        'Body' => fopen($pro_image_name, 'rb'),
+        'ACL' => 'public-read', // 画像は一般公開されます
+        'ContentType' => mime_content_type($pro_image_name),
+      ));
+
+      // 結果を表示
+      echo "<pre>";
+      var_dump($result);
+      echo "</pre>";
+
+    $dbh = null;
+
+    print $pro_name;
+    print 'を登録しました。<br /><br/>';
+
+  } catch(Exception $e) { 
+    print 'ただいま障害により大変ご迷惑をおかけしております。';
+    exit();
+  }
   ?>
   <a href="add-pro.php" class="backlink">戻る</a>
   </div>
