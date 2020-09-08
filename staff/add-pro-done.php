@@ -26,7 +26,7 @@
   <h2 class="title">登録完了</h2>
   <div class="customer-form-wrapper">
     <?php
-      require_once "../../vendor/autoload.php";
+      include( dirname(__FILE__) . '../../vendor/autoload.php');
       use Aws\S3\S3Client;
     try {
       require_once('dbconnect.php');
