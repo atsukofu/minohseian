@@ -59,7 +59,7 @@
       $data[] = $pro_weight;
       $data[] = $pro_preserve;
       $data[] = $pro_expir;
-      // $data[] = $pro_image_name;
+      $data[] = $pro_image_name;
       $stmt->execute($data);
 
         
