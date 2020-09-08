@@ -25,7 +25,7 @@
   <section>
     <h2 class="title">商品情報登録ページ</h2>
     <div class="customer-form-wrapper">
-    <form method="post" action="add-pro-done.php" enctype="multipart/form-data">
+    <form method="post" action="add-pro-check.php" enctype="multipart/form-data">
       <p class="form-introduction">商品名</p>
       <input type="text" name="name" style="width:300px"><br/>
       <p class="form-introduction">商品説明文</p>

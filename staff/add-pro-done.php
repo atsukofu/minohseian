@@ -37,7 +37,7 @@
       $pro_weight = $_POST['weight'];
       $pro_preserve = $_POST['preserve'];
       $pro_expir = $_POST['expir'];
-      $pro_image_name = $_FILES['file'];
+      $pro_image_name = $_FILES['image_name'];
 
       $pro_name = htmlspecialchars($pro_name,ENT_QUOTES,'UTF-8');
       $pro_content = htmlspecialchars($pro_content,ENT_QUOTES,'UTF-8');
@@ -88,10 +88,10 @@
       // S3バケットに画像をアップロード
       $result = $s3->putObject(array(
         'Bucket' => $bucket,
-        'Key' => time() . '.jpg',
-        'Body' => fopen($file, 'rb'),
+        'Key' => '../gazou/'.$file,
+        'ContentType' => 'image/jpeg',
+        'SourceFile'   => '../gazou/'.$file,
         'ACL' => 'public-read', // 画像は一般公開されます
-        'ContentType' => mime_content_type($file),
       ));
       
       // 結果を表示
