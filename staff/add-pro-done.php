@@ -37,6 +37,7 @@
       $pro_weight = $_POST['weight'];
       $pro_preserve = $_POST['preserve'];
       $pro_expir = $_POST['expir'];
+      $pro_image_name = $_FILES['gazou'];
 
       $pro_name = htmlspecialchars($pro_name,ENT_QUOTES,'UTF-8');
       $pro_content = htmlspecialchars($pro_content,ENT_QUOTES,'UTF-8');
@@ -78,7 +79,7 @@
       ));
       
       // アップロードされた画像の処理
-      $file = $_FILES['file']['tmp_name'];
+      // $file = $_FILES['file']['tmp_name'];
       if (!is_uploaded_file($file)) {
         return;
       }
