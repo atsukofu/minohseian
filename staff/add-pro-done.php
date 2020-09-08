@@ -80,6 +80,7 @@
       
       // アップロードされた画像の処理
       // $file = $_FILES['file']['tmp_name'];
+      $file = $pro_image_name;
       if (!is_uploaded_file($file)) {
         return;
       }
