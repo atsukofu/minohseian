@@ -28,7 +28,7 @@
     <?php
       include( dirname(__FILE__) . '../../vendor/autoload.php');
       use Aws\S3\S3Client;
-    try {
+    // try {
       require_once('dbconnect.php');
 
       $pro_name = $_POST['name'];
@@ -102,10 +102,10 @@
       print $pro_name;
       print 'を登録しました。<br /><br/>';
 
-  } catch(Exception $e) { 
-    print 'ただいま障害により大変ご迷惑をおかけしております。';
-    exit();
-  }
+  // } catch(Exception $e) { 
+  //   print 'ただいま障害により大変ご迷惑をおかけしております。';
+  //   exit();
+  // }
   ?>
   <a href="add-pro.php" class="backlink">戻る</a>
   </div>
