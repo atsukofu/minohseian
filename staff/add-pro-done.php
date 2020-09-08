@@ -88,7 +88,7 @@
       // S3バケットに画像をアップロード
       $result = $s3->putObject(array(
         'Bucket' => $bucket,
-        'Key' => '../gazou/'.$file,
+        'Key' => 's3/'.$file,
         'ContentType' => 'image/jpeg',
         'SourceFile'   => '../gazou/'.$file,
         'ACL' => 'public-read', // 画像は一般公開されます
