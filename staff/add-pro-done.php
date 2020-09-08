@@ -37,7 +37,7 @@
       $pro_weight = $_POST['weight'];
       $pro_preserve = $_POST['preserve'];
       $pro_expir = $_POST['expir'];
-      $pro_image_name = $_FILES['image_name'];
+      $pro_image_name = $_POST['image_name'];
 
       $pro_name = htmlspecialchars($pro_name,ENT_QUOTES,'UTF-8');
       $pro_content = htmlspecialchars($pro_content,ENT_QUOTES,'UTF-8');
