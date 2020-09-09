@@ -46,7 +46,7 @@
       if($pro_image['size'] > 1000000) {
         print '画像が大きすぎます。';
       } else {
-        move_uploaded_file($pro_image['tmp_name'],'../gazou/'.$pro_image['name']);
+        move_uploaded_file($pro_image['tmp_name'],'../../gazou/'.$pro_image['name']);
         print '<img src = "../gazou/'.$pro_image['name'].'" style="width:200px;height:200px;">';
       }
     }
