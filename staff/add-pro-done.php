@@ -1,4 +1,5 @@
 <?php
+  ini_set('display_errors', "On");
   session_start();
   session_regenerate_id(true);
   if(isset($_SESSION['login'])==false){
