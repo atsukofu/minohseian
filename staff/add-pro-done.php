@@ -68,23 +68,23 @@
       $bucket = 'AWS_BUCKET_BUCKET';
       $key = 'AWS_ACCESS_KEY_ID';
       $secret = 'AWS_SECRET_ACCESS_KEY';
-      print 'AWS';
       // S3クライアントを作成
       $s3 = new S3Client(array(
         'version' => 'latest',
         'credentials' => array(
-            'key' => $key,
-            'secret' => $secret,
+          'key' => $key,
+          'secret' => $secret,
         ),
         'region'  => 'ap-northeast-1', // 東京リージョン
       ));
+      print 'AWS';
       
       // アップロードされた画像の処理
       // $file = $_FILES['file']['tmp_name'];
       $file = $pro_image_name;
-      if (!is_uploaded_file($file)) {
-        return;
-      }
+      // if (!is_uploaded_file($file)) {
+      //   return;
+      // }
       print 'image';
       
       // S3バケットに画像をアップロード
@@ -95,6 +95,7 @@
         'SourceFile'   => '../gazou/'.$file,
         'ACL' => 'public-read', // 画像は一般公開されます
       ));
+      print 'bucket';
       
       // 結果を表示
       print "<pre>";
