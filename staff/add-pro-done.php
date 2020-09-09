@@ -64,11 +64,11 @@
       $data[] = $pro_image_name;
       $stmt->execute($data);
 
-        
+      
       $bucket = 'AWS_BUCKET_BUCKET';
       $key = 'AWS_ACCESS_KEY_ID';
       $secret = 'AWS_SECRET_ACCESS_KEY';
-
+      print 'AWS';
       // S3クライアントを作成
       $s3 = new S3Client(array(
         'version' => 'latest',
@@ -85,6 +85,7 @@
       if (!is_uploaded_file($file)) {
         return;
       }
+      print 'image';
       
       // S3バケットに画像をアップロード
       $result = $s3->putObject(array(
@@ -96,9 +97,9 @@
       ));
       
       // 結果を表示
-      echo "<pre>";
+      print "<pre>";
       var_dump($result);
-      echo "</pre>";
+      print "</pre>";
       
       $dbh = null;
       
