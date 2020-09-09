@@ -29,7 +29,7 @@
     <?php
       include( dirname(__FILE__) . '../../vendor/autoload.php');
       use Aws\S3\S3Client;
-    // try {
+    try {
       require_once('dbconnect.php');
 
       $pro_name = $_POST['name'];
@@ -65,52 +65,52 @@
       $stmt->execute($data);
 
       
-      $bucket = 'AWS_BUCKET_BUCKET';
-      $key = 'AWS_ACCESS_KEY_ID';
-      $secret = 'AWS_SECRET_ACCESS_KEY';
-      // S3クライアントを作成
-      $s3 = new S3Client(array(
-        'version' => 'latest',
-        'credentials' => array(
-          'key' => $key,
-          'secret' => $secret,
-        ),
-        'region'  => 'ap-northeast-1', // 東京リージョン
-      ));
-      print 'AWS';
+      // $bucket = 'AWS_BUCKET_BUCKET';
+      // $key = 'AWS_ACCESS_KEY_ID';
+      // $secret = 'AWS_SECRET_ACCESS_KEY';
+      // // S3クライアントを作成
+      // $s3 = new S3Client(array(
+      //   'version' => 'latest',
+      //   'credentials' => array(
+      //     'key' => $key,
+      //     'secret' => $secret,
+      //   ),
+      //   'region'  => 'ap-northeast-1', // 東京リージョン
+      // ));
+      // print 'AWS';
       
-      // アップロードされた画像の処理
-      // $file = $_FILES['file']['tmp_name'];
-      $file = $pro_image_name;
+      // // アップロードされた画像の処理
+      // // $file = $_FILES['file']['tmp_name'];
+      // $file = $pro_image_name;
       // if (!is_uploaded_file($file)) {
       //   return;
       // }
-      print 'image';
+      // print 'image';
       
-      // S3バケットに画像をアップロード
-      $result = $s3->putObject(array(
-        'Bucket' => $bucket,
-        'Key' => $file,
-        'ContentType' => 'image/jpeg',
-        'SourceFile'   => '../gazou/'.$file,
-        'ACL' => 'public-read', // 画像は一般公開されます
-      ));
-      print 'bucket';
+      // // S3バケットに画像をアップロード
+      // $result = $s3->putObject(array(
+      //   'Bucket' => $bucket,
+      //   'Key' => $file,
+      //   'ContentType' => 'image/jpeg',
+      //   'SourceFile'   => '../gazou/'.$file,
+      //   'ACL' => 'public-read', // 画像は一般公開されます
+      // ));
+      // print 'bucket';
       
-      // 結果を表示
-      print "<pre>";
-      var_dump($result);
-      print "</pre>";
+      // // 結果を表示
+      // print "<pre>";
+      // var_dump($result);
+      // print "</pre>";
       
       $dbh = null;
       
       print $pro_name;
       print 'を登録しました。<br /><br/>';
 
-  // } catch(Exception $e) { 
-  //   print 'ただいま障害により大変ご迷惑をおかけしております。';
-  //   exit();
-  // }
+  } catch(Exception $e) { 
+    print 'ただいま障害により大変ご迷惑をおかけしております。';
+    exit();
+  }
   ?>
   <a href="add-pro.php" class="backlink">戻る</a>
   </div>
