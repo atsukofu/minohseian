@@ -92,7 +92,7 @@
         'Bucket' => $bucket,
         'Key' => $file,
         'ContentType' => 'image/jpeg',
-        'SourceFile'   => 's3/'.$file,
+        'SourceFile'   => 'gazou/'.$file,
         'ACL' => 'public-read', // 画像は一般公開されます
       ));
       print 'bucket';
