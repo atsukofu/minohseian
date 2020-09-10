@@ -60,7 +60,7 @@
     if($contact_name == "" || $contact_email == "" || $contact_content == ""){
       print '<input type="button" onclick="history.back()" value="戻る">';
     } else {
-      print '<form action="mailto.php">';
+      print '<form action="mailto.php" method="post">';
       print '<input type="hidden" name="company" value="'.$contact_company.'">';
       print '<input type="hidden" name="name" value="'.$contact_name.'">';
       print '<input type="hidden" name="email" value="'.$contact_email.'">';

@@ -9,12 +9,25 @@ $contact_name = htmlspecialchars($contact_name,ENT_QUOTES,'UTF-8');
 $contact_email = htmlspecialchars($contact_email,ENT_QUOTES,'UTF-8');
 $contact_content = htmlspecialchars($contact_content,ENT_QUOTES,'UTF-8');
 
-$to = "atsukofu0527@gmail.com";
-$subject = ".$contact_name.様よりお問い合わせ";
-$message = "会社名: .$contact_company.<br/><br>.$contact_content.";
-$headers = "From: .$contact_email";
+include( dirname(__FILE__) . '../../vendor/autoload.php');
+$email = new \SendGrid\Mail\Mail();
+$email->setFrom("o73.furukawa.atsuko@gmail.com", $contact_name);
+$email->setSubject(".$contact_name.様よりお問い合わせ");
+$email->addTo("atsukofu0527@gmail.com", "admin");
+$email->addContent("text/plain", "会社名: .$contact_company.<br/><br>.$contact_content");
+$email->addContent(
+    "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+);
+$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+try {
+    $response = $sendgrid->send($email);
+    print $response->statusCode() . "\n";
+    print_r($response->headers());
+    print $response->body() . "\n";
+} catch (Exception $e) {
+    echo 'Caught exception: '. $e->getMessage() ."\n";
+}
 
-mail($to, $subject, $message, $headers);
 
 header('Location:mail-done.php');
     exit();
