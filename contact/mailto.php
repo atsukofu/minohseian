@@ -11,12 +11,11 @@ $contact_content = htmlspecialchars($contact_content,ENT_QUOTES,'UTF-8');
 
 include( dirname(__FILE__) . '../../vendor/autoload.php');
 $email = new \SendGrid\Mail\Mail();
-$email->setFrom("o73.furukawa.atsuko@gmail.com", $contact_name);
-$email->setSubject(".$contact_name.様よりお問い合わせ");
+$email->setFrom($contact_email, $contact_name);
+$email->setSubject($contact_name."様よりお問い合わせ");
 $email->addTo("atsukofu0527@gmail.com", "admin");
-$email->addContent("text/plain", "会社名: .$contact_company.<br/><br>.$contact_content");
 $email->addContent(
-    "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+    "text/html", "<p>会社名:.$contact_company.<br/><br/>.$contact_content</p>"
 );
 $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 try {

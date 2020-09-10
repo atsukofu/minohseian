@@ -28,7 +28,7 @@
   <div class="customer-form-wrapper">
     <?php
       include( dirname(__FILE__) . '../../vendor/autoload.php');
-      use Aws\S3\S3Client;
+      // use Aws\S3\S3Client;
     try {
       require_once('dbconnect.php');
 
@@ -47,11 +47,11 @@
       $pro_preserve = htmlspecialchars($pro_preserve,ENT_QUOTES,'UTF-8');
       $pro_expir = htmlspecialchars($pro_expir,ENT_QUOTES,'UTF-8');
 
-      // $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
-      // $user = 'root';
-      // $password = '';
-      // $dbh = new PDO($dsn, $user, $password);
-      // $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $dsn = 'mysql:dbname=ankoproduct;host=localhost;charset=utf8';
+      $user = 'root';
+      $password = '';
+      $dbh = new PDO($dsn, $user, $password);
+      $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       $sql = 'INSERT INTO ankoproduct(name,content,brix,weight,preserve,expir,image)VALUES (?,?,?,?,?,?,?)';
       $stmt = $dbh->prepare($sql);
