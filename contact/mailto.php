@@ -15,7 +15,7 @@ $email->setFrom($contact_email, $contact_name);
 $email->setSubject($contact_name."様よりお問い合わせ");
 $email->addTo("atsukofu0527@gmail.com", "admin");
 $email->addContent(
-    "text/html", "<p>会社名:.$contact_company.<br/><br/>.$contact_content</p>"
+    "text/html", "<p>会社名:$contact_company<br/><br/>$contact_content</p>"
 );
 $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 try {
